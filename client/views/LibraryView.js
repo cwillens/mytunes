@@ -5,6 +5,9 @@ var LibraryView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.collection.on('loadedData', function() {
+      this.render();
+    }, this);
 
   },
 
