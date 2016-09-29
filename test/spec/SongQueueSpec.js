@@ -2,7 +2,6 @@ describe('SongQueue', function() {
   var playSpy, songData1, songData2;
 
   beforeEach(function() {
-    debugger;
     playSpy = sinon.spy(SongQueue.prototype, 'playFirst');
     songData1 = {
       artist: 'data',
