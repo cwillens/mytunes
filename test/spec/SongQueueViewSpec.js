@@ -1,5 +1,5 @@
 describe('SongQueueView', function() {
-  var view, fakeSongs, entryView;
+  var view, fakeSongs, entryView, songQueue;
 
   beforeEach(function() {
     fakeSongs = new SongQueue([
@@ -35,19 +35,10 @@ describe('SongQueueView', function() {
     expect(view.render).to.have.been.called;
   });
 
-  //finish this test
-  xit('allows user to remove song from queue by clicking on it', function() {
-    sinon.spy(SongQueueView.prototype, 'render');
-    var song = new SongModel({
-      artist: 'data',
-      url: '/test/testsong.mp3',
-      title: 'test song'
-    });
-    entryView = new SongQueueEntryView({model: song});
-    //entryView.$el
+  it('allows user to remove song from queue by clicking on it', function() {
+    entryView = new SongQueueEntryView({model: fakeSongs.at(0)});
     $(entryView.el).trigger('click');
-    view.collection.pop();
-    expect(view.render).to.have.been.called;
+    expect(fakeSongs.length).to.equal(1);
   });
 
 });
