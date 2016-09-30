@@ -4,16 +4,25 @@
 
 body {
   background-color: #ccffff;
+  font-family: Arial;
+  color: white;
 }
 
 .container {
-  background-color: white;
+  background-color: #336699;
   width: 600px;
   border-width: 1px;
   border-radius: 25px;
-  padding: 4px;
+  padding: 30px;
+  margin: auto;
 }
 
 td {
   padding-bottom: 3px;
 }
+
+.currentSongPlaying {
+  font-style: italic;
+  font-size: 16pt;
+}
+

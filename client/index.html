@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
@@ -37,6 +38,7 @@
         var appView = new AppView({model: app});
 
         // put the view onto the screen
+        $('.container').append('<div class="currentSongPlaying">Play some tunes...</div>');
         $('.container').append(appView.render());
       });
     </script>
