@@ -1,0 +1,19 @@
+.playcount {
+  font-size: 9pt;
+}
+
+body {
+  background-color: #ccffff;
+}
+
+.container {
+  background-color: white;
+  width: 600px;
+  border-width: 1px;
+  border-radius: 25px;
+  padding: 4px;
+}
+
+td {
+  padding-bottom: 3px;
+}
