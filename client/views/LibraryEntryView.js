@@ -3,16 +3,7 @@ var LibraryEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  counter: 0,
-
   initialize: function() {
-
-    this.model.on('play', function() {
-      console.log("song played");
-      this.counter ++;
-      console.log(this.counter);
-      //this.render();
-    }, this);
 
   },
 
@@ -27,7 +18,7 @@ var LibraryEntryView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.model.attributes));
-    this.$el.append('<span class="playcount"> [playcount: ' + this.counter + ']</span');
+    this.$el.append('<span class="playcount"> [playcount: ' + this.model.playCounter + ']</span');
     return this.$el;
   }
 
