@@ -23,11 +23,18 @@ var Songs = Backbone.Collection.extend({
         console.error('Failed to get data', data);
       }
     });
+
+    this.on('play', function() {
+      this.trigger('playCountUp', this);
+    }, this);
+
   },
 
   loadedData: function() {
     // Triggering an event here will also trigger the event on the collection
     this.trigger('loadedData', this);
   }
+
+
 
 });

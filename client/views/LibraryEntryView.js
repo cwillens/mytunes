@@ -3,17 +3,32 @@ var LibraryEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
+  counter: 0,
+
+  initialize: function() {
+
+    this.model.on('play', function() {
+      console.log("song played");
+      this.counter ++;
+      console.log(this.counter);
+      //this.render();
+    }, this);
+
+  },
+
   template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
 
   events: {
     'click': function() {
-      this.model.play();
+      //this.model.play();
       this.model.enqueue();
     }
   },
 
   render: function() {
-    return this.$el.html(this.template(this.model.attributes));
+    this.$el.html(this.template(this.model.attributes));
+    this.$el.append('<span class="playcount"> [playcount: ' + this.counter + ']</span');
+    return this.$el;
   }
 
 });

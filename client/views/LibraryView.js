@@ -8,6 +8,9 @@ var LibraryView = Backbone.View.extend({
     this.collection.on('loadedData', function() {
       this.render();
     }, this);
+    this.collection.on('playCountUp', function() {
+      this.render();
+    }, this);
 
   },
 
